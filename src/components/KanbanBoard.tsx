@@ -212,16 +212,17 @@ function KanbanBoard() {
     if (activeId === overId) return;
   
     const isActiveATask = active.data.current?.type === "Task"
-    const isOverATask = active.data.current?.type === "Task"
+    const isOverATask = over.data.current?.type === "Task"
+    
     if(!isActiveATask)return;
   
     if(isActiveATask && isOverATask){
-      setTasks(tasks => {
-        const activeIndex = tasks.findIndex((t) => t.id === activeId)
-        const overIndex = tasks.findIndex((t)=> t.id === overId)
+      setTasks((tasks) => {
+        const activeIndex = tasks.findIndex((t) => t.id === activeId);
+        const overIndex = tasks.findIndex((t)=> t.id === overId);
         
 
-          tasks[activeIndex].columnId = tasks[overIndex].columnId
+          tasks[activeIndex].columnId = tasks[overIndex].columnId;
         
         
         return arrayMove(tasks, activeIndex, overIndex);
