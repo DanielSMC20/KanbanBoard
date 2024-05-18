@@ -118,7 +118,7 @@ function ColumnContainer(props: Props) {
             ronded-full
             "
         >
-          0
+         
         </div>
         {!editMode && column.title}
         {editMode && (
@@ -181,7 +181,7 @@ function ColumnContainer(props: Props) {
         }}
       >
         <PlusIcon />
-        Add task
+        Agregar Tarea
       </button>
     </div>
   );
